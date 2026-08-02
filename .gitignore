@@ -1,0 +1,6 @@
+# Scripts de edição local (não vão pro site)
+crop_*.py
+_*.png
+_*.jpg
+Thumbs.db
+.DS_Store
