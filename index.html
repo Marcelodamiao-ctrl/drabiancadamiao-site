@@ -4,12 +4,31 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dra. Bianca Damião | Harmonização Facial</title>
+<meta name="description" content="Dra. Bianca Damião - Cirurgiã-Dentista especialista em Harmonização Facial. Toxina Botulínica, Preenchimento Labial, Malar e Mento. Resultados naturais e personalizados.">
+<meta name="keywords" content="harmonização facial, toxina botulínica, preenchimento labial, preenchimento malar, preenchimento mento, cirurgiã dentista, estética facial">
+<meta property="og:title" content="Dra. Bianca Damião | Harmonização Facial">
+<meta property="og:description" content="Cirurgiã-Dentista especialista em Harmonização Facial. Resultados naturais e personalizados com Toxina Botulínica e Preenchedores.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://drabiancadamiao.netlify.app/img/dra_bianca.jpg">
+<meta property="og:url" content="https://drabiancadamiao.netlify.app">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dra. Bianca Damião | Harmonização Facial">
+<meta name="twitter:description" content="Especialista em Harmonização Facial. Resultados naturais e personalizados.">
+<meta name="twitter:image" content="https://drabiancadamiao.netlify.app/img/dra_bianca.jpg">
 <link rel="icon" href="img/logo.png" type="image/png">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:'Montserrat',sans-serif;color:#4a3f3f;background:#fdf8f5;line-height:1.7}
+
+/* ANIMAÇÕES SCROLL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease-out,transform .8s ease-out}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.delay-1{transition-delay:.1s}
+.reveal.delay-2{transition-delay:.2s}
+.reveal.delay-3{transition-delay:.3s}
+.reveal.delay-4{transition-delay:.4s}
 
 /* HEADER */
 header{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:15px 40px;background:rgba(253,248,245,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,175,125,0.2);transition:all .3s}
@@ -81,10 +100,30 @@ nav a:hover::after{width:100%}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .antes-depois{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:35px}
 .antes-depois figure{flex:1;min-width:280px;max-width:400px;text-align:center}
-.antes-depois figure .img-wrap{position:relative;overflow:hidden;border-radius:15px;box-shadow:0 10px 30px rgba(139,111,78,0.15)}
-.antes-depois figure img{width:100%;display:block;object-fit:cover;border-radius:15px}
+.antes-depois figure .img-wrap{position:relative;overflow:hidden;border-radius:15px;box-shadow:0 10px 30px rgba(139,111,78,0.15);cursor:zoom-in}
+.antes-depois figure img{width:100%;display:block;object-fit:cover;border-radius:15px;transition:transform .4s ease}
+.antes-depois figure .img-wrap:hover img{transform:scale(1.03)}
 .antes-depois figure .label-tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.9);color:#8b6f4e;padding:4px 14px;border-radius:20px;font-size:.75rem;font-weight:600;letter-spacing:.5px}
 .antes-depois figure figcaption{margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#8b6f4e}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:1000;display:none;align-items:center;justify-content:center;flex-direction:column;padding:20px;opacity:0;transition:opacity .3s}
+.lightbox.active{display:flex;opacity:1}
+.lightbox-img{max-width:90%;max-height:75%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.5);object-fit:contain}
+.lightbox-close{position:absolute;top:30px;right:40px;width:44px;height:44px;background:rgba(255,255,255,0.1);border:none;border-radius:50%;color:#fff;font-size:2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.lightbox-close:hover{background:rgba(255,255,255,0.2)}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:56px;height:56px;background:rgba(255,255,255,0.1);border:none;border-radius:50%;color:#fff;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.lightbox-nav:hover{background:rgba(255,255,255,0.2)}
+.lightbox-prev{left:30px}
+.lightbox-next{right:30px}
+.lightbox-caption{margin-top:20px;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#d4af7d;text-align:center;max-width:800px}
+.lightbox-counter{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:#a08570;font-size:.9rem}
+@media(max-width:768px){
+  .lightbox-close{top:15px;right:15px}
+  .lightbox-prev{left:15px}
+  .lightbox-next{right:15px}
+  .lightbox-nav{width:44px;height:44px;font-size:1.2rem}
+}
 
 /* CROMOTERAPIA */
 .cromo-section{background:linear-gradient(135deg,#fdf8f5,#f5ebe0);border-radius:20px;padding:50px;margin:0 auto;max-width:1000px;display:flex;gap:40px;align-items:center;flex-wrap:wrap}
@@ -144,7 +183,7 @@ footer a{color:#d4af7d;text-decoration:none}
  .citacao blockquote{font-size:1.4rem}
  .contato-card{min-width:150px;padding:25px 15px}
  .whatsapp-float{width:50px;height:50px}
-.whatsapp-float svg{width:28px;height:28px}
+ .whatsapp-float svg{width:28px;height:28px}
 }
 </style>
 </head>
@@ -153,7 +192,7 @@ footer a{color:#d4af7d;text-decoration:none}
 <!-- HEADER -->
 <header id="header">
   <div class="logo-area">
-    <img src="img/logo.png" alt="Dra. Bianca Damião">
+    <img src="img/logo.png" alt="Dra. Bianca Damião" loading="lazy">
     <span>Bianca Damião</span>
   </div>
   <nav>
@@ -173,31 +212,31 @@ footer a{color:#d4af7d;text-decoration:none}
 <!-- HERO -->
 <section class="hero" id="inicio">
   <div class="hero-content">
-    <div class="hero-text">
+    <div class="hero-text reveal">
       <p class="tagline">Harmonização Facial</p>
       <h1>Dra. Bianca <span class="destaque">Damião</span></h1>
       <p class="sub">Cirurgiã-Dentista · Especialista em Harmonização Facial</p>
       <p class="slogan">"Lapidando sua melhor versão"</p>
       <a href="https://wa.me/5515996636964?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20meu%20agendamento%20de%20consulta" target="_blank" class="btn-agendar">Agendar consulta →</a>
     </div>
-    <div class="hero-img">
-      <img src="img/dra_bianca.jpg" alt="Dra. Bianca Damião">
+    <div class="hero-img reveal delay-1">
+      <img src="img/dra_bianca.jpg" alt="Dra. Bianca Damião" loading="eager">
     </div>
   </div>
 </section>
 
 <!-- SOBRE -->
 <section class="section" id="sobre">
-  <div class="section-title">
+  <div class="section-title reveal">
     <p class="label">Quem sou eu</p>
     <h2>Sobre</h2>
     <div class="line"></div>
   </div>
   <div class="sobre-content">
-    <div class="sobre-img">
-      <img src="img/dra_bianca_old_black.jpg" alt="Dra. Bianca Damião">
+    <div class="sobre-img reveal delay-1">
+      <img src="img/dra_bianca_old_black.jpg" alt="Dra. Bianca Damião" loading="lazy">
     </div>
-    <div class="sobre-text">
+    <div class="sobre-text reveal delay-2">
       <p><strong>Cirurgiã-dentista formada pela FMU</strong>, com paixão pela estética e pelo poder de transformar autoestima.</p>
       <p>Pós-graduada em <strong>Harmonização Facial</strong>, aprofundando conhecimentos em técnicas avançadas e seguras, com foco em resultados naturais e personalizados.</p>
       <p>Trabalho pautado na valorização da beleza individual, buscando realçar a melhor versão de cada paciente com equilíbrio, naturalidade e precisão técnica.</p>
@@ -213,14 +252,13 @@ footer a{color:#d4af7d;text-decoration:none}
 
 <!-- SERVIÇOS -->
 <section class="section" id="servicos">
-  <div class="section-title">
+  <div class="section-title reveal">
     <p class="label">O que eu faço</p>
     <h2>Procedimentos</h2>
     <div class="line"></div>
   </div>
   <div class="servicos-grid">
-
-    <div class="servico-card">
+    <div class="servico-card reveal delay-1">
       <div class="servico-icon">💉</div>
       <h3>Toxina Botulínica</h3>
       <p class="desc">Relaxa temporariamente os músculos responsáveis pelas rugas de expressão, suavizando as linhas progressivamente.</p>
@@ -235,7 +273,7 @@ footer a{color:#d4af7d;text-decoration:none}
       <p class="duracao"><strong>Duração:</strong> 4 a 6 meses · Resultado em até 15 dias</p>
     </div>
 
-    <div class="servico-card">
+    <div class="servico-card reveal delay-2">
       <div class="servico-icon">💋</div>
       <h3>Preenchimento Labial</h3>
       <p class="desc">Define contorno, melhora proporção e adiciona volume aos lábios com resultado natural.</p>
@@ -248,7 +286,7 @@ footer a{color:#d4af7d;text-decoration:none}
       <p class="duracao"><strong>Duração:</strong> 8 a 12 meses · Resultado imediato</p>
     </div>
 
-    <div class="servico-card">
+    <div class="servico-card reveal delay-3">
       <div class="servico-icon">✨</div>
       <h3>Preenchimento de Mento</h3>
       <p class="desc">Melhora a projeção e o contorno do queixo, trazendo mais equilíbrio ao perfil facial.</p>
@@ -260,7 +298,7 @@ footer a{color:#d4af7d;text-decoration:none}
       <p class="duracao"><strong>Duração:</strong> 12 a 18 meses · Resultado imediato</p>
     </div>
 
-    <div class="servico-card">
+    <div class="servico-card reveal delay-4">
       <div class="servico-icon">🌸</div>
       <h3>Preenchimento de Malar</h3>
       <p class="desc">Restaura o volume das maçãs do rosto, proporcionando um efeito de lifting suave e rejuvenescimento.</p>
@@ -273,7 +311,7 @@ footer a{color:#d4af7d;text-decoration:none}
       <p class="duracao"><strong>Duração:</strong> 12 a 18 meses · Resultado imediato</p>
     </div>
 
-    <div class="servico-card">
+    <div class="servico-card reveal delay-4">
       <div class="servico-icon">🔮</div>
       <h3>Esferas de Cromoterapia</h3>
       <p class="desc">Massagem com esferas de cristal geladas associadas à cromoterapia em todos os procedimentos.</p>
@@ -292,13 +330,13 @@ footer a{color:#d4af7d;text-decoration:none}
 
 <!-- GALERIA -->
 <section class="section" id="galeria">
-  <div class="section-title">
+  <div class="section-title reveal">
     <p class="label">Resultados</p>
     <h2>Antes & Depois</h2>
     <div class="line"></div>
   </div>
 
-  <div class="galeria-tabs">
+  <div class="galeria-tabs reveal delay-1">
     <button class="tab-btn active" data-tab="botox">Toxina Botulínica</button>
     <button class="tab-btn" data-tab="labial">Preenchimento Labial</button>
     <button class="tab-btn" data-tab="malar">Preenchimento de Malar</button>
@@ -307,66 +345,66 @@ footer a{color:#d4af7d;text-decoration:none}
 
   <div class="galeria-content active" id="tab-botox">
     <div class="antes-depois">
-      <figure><div class="img-wrap"><img src="img/botox_1_antes.jpg" alt="Antes - Toxina Botulínica 1"></div></figure>
-      <figure><div class="img-wrap"><img src="img/botox_1_depois.jpg" alt="Depois - Toxina Botulínica 1"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_1_antes.jpg" alt="Antes - Toxina Botulínica 1" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_1_depois.jpg" alt="Depois - Toxina Botulínica 1" loading="lazy"></div></figure>
     </div>
     <div class="antes-depois">
-      <figure><div class="img-wrap"><img src="img/botox_2_antes.jpg" alt="Antes - Toxina Botulínica 2"></div></figure>
-      <figure><div class="img-wrap"><img src="img/botox_2_depois.jpg" alt="Depois - Toxina Botulínica 2"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_2_antes.jpg" alt="Antes - Toxina Botulínica 2" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_2_depois.jpg" alt="Depois - Toxina Botulínica 2" loading="lazy"></div></figure>
     </div>
     <div class="antes-depois">
-      <figure><div class="img-wrap"><img src="img/botox_3_antes.jpg" alt="Antes - Toxina Botulínica 3"></div></figure>
-      <figure><div class="img-wrap"><img src="img/botox_3_depois.jpg" alt="Depois - Toxina Botulínica 3"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_3_antes.jpg" alt="Antes - Toxina Botulínica 3" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_3_depois.jpg" alt="Depois - Toxina Botulínica 3" loading="lazy"></div></figure>
     </div>
     <div class="antes-depois">
-      <figure><div class="img-wrap"><img src="img/botox_5_antes.jpg" alt="Antes - Toxina Botulínica 4"></div></figure>
-      <figure><div class="img-wrap"><img src="img/botox_5_depois.jpg" alt="Depois - Toxina Botulínica 4"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_5_antes.jpg" alt="Antes - Toxina Botulínica 4" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_5_depois.jpg" alt="Depois - Toxina Botulínica 4" loading="lazy"></div></figure>
     </div>
   </div>
 
   <div class="galeria-content" id="tab-labial">
     <div class="antes-depois">
-      <figure><div class="img-wrap"><img src="img/labial_2_antes.jpg" alt="Antes - Preenchimento Labial 1"></div></figure>
-      <figure><div class="img-wrap"><img src="img/labial_2_depois.jpg" alt="Depois - Preenchimento Labial 1"></div></figure>
+      <figure><div class="img-wrap"><img src="img/labial_2_antes.jpg" alt="Antes - Preenchimento Labial 1" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/labial_2_depois.jpg" alt="Depois - Preenchimento Labial 1" loading="lazy"></div></figure>
     </div>
     <div class="antes-depois">
-      <figure><div class="img-wrap"><img src="img/labial_3_antes.jpg" alt="Antes - Preenchimento Labial 2"></div></figure>
-      <figure><div class="img-wrap"><img src="img/labial_3_depois.jpg" alt="Depois - Preenchimento Labial 2"></div></figure>
+      <figure><div class="img-wrap"><img src="img/labial_3_antes.jpg" alt="Antes - Preenchimento Labial 2" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/labial_3_depois.jpg" alt="Depois - Preenchimento Labial 2" loading="lazy"></div></figure>
     </div>
     <div class="antes-depois">
-      <figure><div class="img-wrap"><img src="img/labial_4_antes.jpg" alt="Antes - Preenchimento Labial 3"></div></figure>
-      <figure><div class="img-wrap"><img src="img/labial_4_depois.jpg" alt="Depois - Preenchimento Labial 3"></div></figure>
+      <figure><div class="img-wrap"><img src="img/labial_4_antes.jpg" alt="Antes - Preenchimento Labial 3" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/labial_4_depois.jpg" alt="Depois - Preenchimento Labial 3" loading="lazy"></div></figure>
     </div>
     <div class="antes-depois">
-      <figure><div class="img-wrap"><img src="img/botox_4_antes.jpg" alt="Antes - Preenchimento Labial 4"></div></figure>
-      <figure><div class="img-wrap"><img src="img/botox_4_depois.jpg" alt="Depois - Preenchimento Labial 4"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_4_antes.jpg" alt="Antes - Preenchimento Labial 4" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_4_depois.jpg" alt="Depois - Preenchimento Labial 4" loading="lazy"></div></figure>
     </div>
   </div>
 
   <div class="galeria-content" id="tab-malar">
     <div class="antes-depois">
-      <figure><div class="img-wrap"><img src="img/malar_antes_depois1.jpg" alt="Antes e Depois - Preenchimento de Malar 1"></div></figure>
+      <figure><div class="img-wrap"><img src="img/malar_antes_depois1.jpg" alt="Antes e Depois - Preenchimento de Malar 1" loading="lazy"></div></figure>
     </div>
     <div class="antes-depois">
-      <figure><div class="img-wrap"><img src="img/malar_antes_depois3.jpg" alt="Antes e Depois - Preenchimento de Malar 2"></div></figure>
+      <figure><div class="img-wrap"><img src="img/malar_antes_depois3.jpg" alt="Antes e Depois - Preenchimento de Malar 2" loading="lazy"></div></figure>
     </div>
   </div>
 
   <div class="galeria-content" id="tab-mento">
     <div class="antes-depois">
-      <figure><div class="img-wrap"><span class="label-tag">ANTES</span><img src="img/mento_antes_gallery.jpg" alt="Antes - Preenchimento de Mento"></div></figure>
-      <figure><div class="img-wrap"><span class="label-tag">DEPOIS</span><img src="img/mento_depois_gallery.jpg" alt="Depois - Preenchimento de Mento"></div></figure>
+      <figure><div class="img-wrap"><span class="label-tag">ANTES</span><img src="img/mento_antes_gallery.jpg" alt="Antes - Preenchimento de Mento" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><span class="label-tag">DEPOIS</span><img src="img/mento_depois_gallery.jpg" alt="Depois - Preenchimento de Mento" loading="lazy"></div></figure>
     </div>
   </div>
 </section>
 
 <!-- CROMOTERAPIA -->
 <section class="section">
-  <div class="cromo-section">
-    <div class="cromo-img">
-      <img src="img/cromoterapia.jpg" alt="Esferas de Cromoterapia">
+  <div class="cromo-section reveal">
+    <div class="cromo-img reveal delay-1">
+      <img src="img/cromoterapia.jpg" alt="Esferas de Cromoterapia" loading="lazy">
     </div>
-    <div class="cromo-text">
+    <div class="cromo-text reveal delay-2">
       <h3>Esferas de Cromoterapia</h3>
       <p>Todos os procedimentos incluem uma massagem com esferas de cristal geladas associadas à cromoterapia.</p>
       <ul class="cromo-beneficios">
@@ -383,7 +421,7 @@ footer a{color:#d4af7d;text-decoration:none}
 </section>
 
 <!-- CITAÇÃO -->
-<section class="citacao">
+<section class="citacao reveal">
   <blockquote>
     A boa arte é feita com as mãos,<br>
     mas a arte extraordinária é feita com o coração.
@@ -393,14 +431,14 @@ footer a{color:#d4af7d;text-decoration:none}
 
 <!-- CONTATO -->
 <section class="section contato" id="contato">
-  <div class="section-title">
+  <div class="section-title reveal">
     <p class="label">Vamos conversar</p>
     <h2>Contato</h2>
     <div class="line"></div>
   </div>
   <p style="color:#8b7d6b;font-size:1.1rem;margin-top:-30px">Tire suas dúvidas e agende seu horário</p>
-  <a href="https://wa.me/5515996636964?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20meu%20agendamento%20de%20consulta" target="_blank" class="btn-agendar" style="margin-top:35px">Agendar consulta pelo WhatsApp →</a>
-  <div class="contato-links">
+  <a href="https://wa.me/5515996636964?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20meu%20agendamento%20de%20consulta" target="_blank" class="btn-agendar reveal delay-1" style="margin-top:35px">Agendar consulta pelo WhatsApp →</a>
+  <div class="contato-links reveal delay-2">
     <a href="https://wa.me/5515996636964?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho" target="_blank" class="contato-card">
       <div class="icon">📱</div>
       <h4>WhatsApp</h4>
@@ -417,7 +455,7 @@ footer a{color:#d4af7d;text-decoration:none}
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="reveal">
   <p>Dra. Bianca Damião · Harmonização Facial · Cirurgiã-Dentista</p>
   <p style="margin-top:5px">Lapidando sua melhor versão</p>
 </footer>
@@ -426,6 +464,16 @@ footer a{color:#d4af7d;text-decoration:none}
 <a href="https://wa.me/5515996636964?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização ampliada">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">×</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Próxima">›</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+  <p class="lightbox-counter" id="lightboxCounter"></p>
+</div>
 
 <script>
 // Menu mobile
@@ -453,6 +501,88 @@ tabBtns.forEach(btn=>{
     document.getElementById('tab-'+tab).classList.add('active');
   });
 });
+
+// Scroll Reveal (IntersectionObserver)
+const revealEls=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+revealEls.forEach(el=>observer.observe(el));
+
+// LIGHTBOX
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=document.getElementById('lightboxImg');
+const lightboxCaption=document.getElementById('lightboxCaption');
+const lightboxCounter=document.getElementById('lightboxCounter');
+const lightboxClose=document.getElementById('lightboxClose');
+const lightboxPrev=document.getElementById('lightboxPrev');
+const lightboxNext=document.getElementById('lightboxNext');
+
+let currentImages=[];
+let currentIndex=0;
+
+function openLightbox(imgEl){
+  const tabContent=imgEl.closest('.galeria-content');
+  currentImages=Array.from(tabContent.querySelectorAll('.img-wrap img'));
+  currentIndex=currentImages.findIndex(img=>img===imgEl);
+  if(currentIndex===-1) currentIndex=0;
+  showLightboxImage(currentIndex);
+  lightbox.classList.add('active');
+  document.body.style.overflow='hidden';
+}
+
+function showLightboxImage(idx){
+  const img=currentImages[idx];
+  lightboxImg.src=img.src;
+  lightboxImg.alt=img.alt;
+  lightboxCaption.textContent=img.alt;
+  lightboxCounter.textContent=`${idx+1} de ${currentImages.length}`;
+}
+
+function closeLightbox(){
+  lightbox.classList.remove('active');
+  document.body.style.overflow='';
+  lightboxImg.src='';
+}
+
+function prevImage(){
+  currentIndex=(currentIndex-1+currentImages.length)%currentImages.length;
+  showLightboxImage(currentIndex);
+}
+
+function nextImage(){
+  currentIndex=(currentIndex+1)%currentImages.length;
+  showLightboxImage(currentIndex);
+}
+
+// Click nas imagens da galeria
+document.querySelectorAll('.antes-depois figure .img-wrap img').forEach(img=>{
+  img.style.cursor='zoom-in';
+  img.addEventListener('click',()=>openLightbox(img));
+});
+
+lightboxClose.addEventListener('click',closeLightbox);
+lightboxPrev.addEventListener('click',prevImage);
+lightboxNext.addEventListener('click',nextImage);
+
+// Fechar ao clicar no fundo
+lightbox.addEventListener('click',(e)=>{
+  if(e.target===lightbox) closeLightbox();
+});
+
+// Teclado
+document.addEventListener('keydown',(e)=>{
+  if(!lightbox.classList.contains('active')) return;
+  if(e.key==='Escape') closeLightbox();
+  if(e.key==='ArrowLeft') prevImage();
+  if(e.key==='ArrowRight') nextImage();
+});
+
 </script>
 </body>
 </html>
