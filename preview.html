@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prévia - Galeria - Dra. Bianca Damião</title>
+<style>
+  :root {
+    --bg: #fafafa;
+    --card: #ffffff;
+    --border: #e0e0e0;
+    --text: #222222;
+    --muted: #666666;
+    --accent: #2563eb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+  .preview-header {
+    margin-bottom: 24px;
+  }
+  .preview-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .preview-tab {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    flex: 1 1 300px;
+  }
+  .preview-tab h3 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+  .preview-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .preview-gallery figure {
+    margin: 0;
+  }
+  .preview-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+  }
+  .preview-count {
+    margin-top: 8px;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+  <div class="preview-header">
+    <h1>Galeria do site</h1>
+    <p>Prévia das fotos em <code>img/</code> (antes do deploy)</p>
+  </div>
+  <div class="preview-tabs">
+['\n    <div class="preview-tab">\n      <h3>Preenchimento Labial</h3>\n      <div class="preview-gallery">\n        \n    <div class="antes-depois">\n      <figure><div class="img-wrap"><img src="img/labial_2_antes.jpg" alt="Antes - Preenchimento Labial 1" loading="lazy">\n      </div>\n      <p class="preview-count">1 imagem(ns)</p>\n    </div>', '\n    <div class="preview-tab">\n      <h3>Rinomodelação</h3>\n      <div class="preview-gallery">\n        \n    <div class="antes-depois">\n      <figure><div class="img-wrap"><img src="img/rhinomodelagem_novo1.jpg" alt="Antes - Rinomodelação" loading="lazy">\n      </div>\n      <p class="preview-count">1 imagem(ns)</p>\n    </div>', '\n    <div class="preview-tab">\n      <h3>Preenchimento de Malar</h3>\n      <div class="preview-gallery">\n        \n    <div class="antes-depois">\n      <figure><div class="img-wrap"><img src="img/malar_antes_depois1.jpg" alt="Antes e Depois - Preenchimento de Malar 1" loading="lazy">\n      </div>\n      <p class="preview-count">1 imagem(ns)</p>\n    </div>', '\n    <div class="preview-tab">\n      <h3>Preenchimento de Mento</h3>\n      <div class="preview-gallery">\n        \n    <div class="antes-depois">\n      <figure><div class="img-wrap"><img src="img/preenchimento_mento_novo1.jpg" alt="Antes - Preenchimento de Mento" loading="lazy">\n      </div>\n      <p class="preview-count">1 imagem(ns)</p>\n    </div>']
+  </div>
+</body>
+</html>

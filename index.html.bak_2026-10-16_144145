@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Bianca Damião | Harmonização Facial</title>
+<meta name="description" content="Dra. Bianca Damião - Cirurgiã-Dentista especialista em Harmonização Facial. Toxina Botulínica, Preenchimento Labial, Malar e Mento. Resultados naturais e personalizados.">
+<meta name="keywords" content="harmonização facial, toxina botulínica, preenchimento labial, preenchimento malar, preenchimento mento, cirurgiã dentista, estética facial">
+<meta property="og:title" content="Dra. Bianca Damião | Harmonização Facial">
+<meta property="og:description" content="Cirurgiã-Dentista especialista em Harmonização Facial. Resultados naturais e personalizados com Toxina Botulínica e Preenchedores.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://drabiancadamiao.netlify.app/img/dra_bianca.jpg">
+<meta property="og:url" content="https://drabiancadamiao.netlify.app">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dra. Bianca Damião | Harmonização Facial">
+<meta name="twitter:description" content="Especialista em Harmonização Facial. Resultados naturais e personalizados.">
+<meta name="twitter:image" content="https://drabiancadamiao.netlify.app/img/dra_bianca.jpg">
+<link rel="icon" href="img/logo.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;color:#4a3f3f;background:#fdf8f5;line-height:1.7}
+
+/* ANIMAÇÕES SCROLL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease-out,transform .8s ease-out}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal.delay-1{transition-delay:.1s}
+.reveal.delay-2{transition-delay:.2s}
+.reveal.delay-3{transition-delay:.3s}
+.reveal.delay-4{transition-delay:.4s}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:15px 40px;background:rgba(253,248,245,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(212,175,125,0.2);transition:all .3s}
+header.scrolled{padding:8px 40px;background:rgba(253,248,245,0.98)}
+.logo-area{display:flex;align-items:center;gap:12px}
+.logo-area img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid #d4af7d}
+.logo-area span{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:#8b6f4e}
+nav ul{list-style:none;display:flex;gap:35px}
+nav a{text-decoration:none;color:#6b5d4f;font-size:.85rem;font-weight:500;letter-spacing:.5px;text-transform:uppercase;transition:color .3s;position:relative}
+nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:#d4af7d;transition:width .3s}
+nav a:hover{color:#d4af7d}
+nav a:hover::after{width:100%}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none}
+.burger span{width:28px;height:2px;background:#8b6f4e;transition:.3s}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,#fdf8f5 0%,#f5ebe0 50%,#e8d5c4 100%)}
+.hero-content{display:flex;align-items:center;justify-content:center;gap:60px;padding:120px 40px 60px;max-width:1200px;margin:0 auto;width:100%}
+.hero-text{flex:1;text-align:left}
+.hero-text .tagline{font-size:.8rem;letter-spacing:3px;text-transform:uppercase;color:#c4a47c;font-weight:500;margin-bottom:15px}
+.hero-text h1{font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:500;color:#5c4a37;line-height:1.1;margin-bottom:12px}
+.hero-text h1 .destaque{color:#d4af7d;font-style:italic}
+.hero-text .sub{font-size:1.15rem;color:#8b7d6b;margin-bottom:8px}
+.hero-text .slogan{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.3rem;color:#a08570;margin-top:20px;border-left:3px solid #d4af7d;padding-left:15px}
+.hero-img{flex:0 0 350px;text-align:center;position:relative}
+.hero-img img{width:100%;max-width:350px;border-radius:20px;box-shadow:0 20px 60px rgba(139,111,78,0.25);object-fit:cover}
+.hero-img::before{content:'';position:absolute;top:-15px;right:-15px;width:100%;height:100%;border:2px solid #d4af7d;border-radius:20px;z-index:-1}
+.btn-agendar{display:inline-flex;align-items:center;gap:8px;margin-top:30px;padding:14px 35px;background:linear-gradient(135deg,#d4af7d,#c49a6c);color:#fff;text-decoration:none;border-radius:50px;font-size:.9rem;font-weight:600;letter-spacing:.5px;transition:transform .3s,box-shadow .3s}
+.btn-agendar:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(212,175,125,0.4)}
+
+/* SECTIONS */
+.section{padding:100px 40px;max-width:1200px;margin:0 auto}
+.section-title{text-align:center;margin-bottom:60px}
+.section-title .label{font-size:.75rem;letter-spacing:3px;text-transform:uppercase;color:#c4a47c;font-weight:500}
+.section-title h2{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:500;color:#5c4a37;margin-top:10px}
+.section-title .line{width:60px;height:2px;background:#d4af7d;margin:20px auto 0}
+
+/* SOBRE */
+.sobre-content{display:flex;gap:50px;align-items:center;flex-wrap:wrap}
+.sobre-img{flex:0 0 320px;text-align:center}
+.sobre-img img{width:100%;max-width:320px;border-radius:15px;box-shadow:0 15px 40px rgba(139,111,78,0.2)}
+.sobre-text{flex:1;min-width:300px}
+.sobre-text p{font-size:1.05rem;color:#6b5d4f;margin-bottom:18px;text-align:justify}
+.sobre-text p strong{color:#8b6f4e}
+.checklist{list-style:none;margin-top:20px}
+.checklist li{padding:8px 0 8px 28px;position:relative;color:#6b5d4f;font-size:.95rem}
+.checklist li::before{content:'✦';position:absolute;left:0;color:#d4af7d}
+
+/* SERVIÇOS */
+.servicos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
+.servico-card{background:#fff;border-radius:15px;padding:35px 28px;text-align:center;box-shadow:0 5px 20px rgba(139,111,78,0.08);transition:transform .3s,box-shadow .3s;border:1px solid rgba(212,175,125,0.12)}
+.servico-card:hover{transform:translateY(-5px);box-shadow:0 15px 40px rgba(139,111,78,0.15)}
+.servico-icon{width:70px;height:70px;margin:0 auto 20px;background:linear-gradient(135deg,#fdf8f5,#f5ebe0);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.servico-card h3{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:#5c4a37;margin-bottom:10px}
+.servico-card .desc{font-size:.9rem;color:#8b7d6b;margin-bottom:15px;line-height:1.6}
+.servico-card .duracao{font-size:.8rem;color:#c4a47c;border-top:1px solid rgba(212,175,125,0.2);padding-top:12px;margin-top:12px}
+.servico-card .duracao strong{color:#8b6f4e}
+.servico-card .indicacoes{text-align:left;margin-top:15px}
+.servico-card .indicacoes li{font-size:.82rem;color:#8b7d6b;padding:3px 0 3px 18px;position:relative;list-style:none}
+.servico-card .indicacoes li::before{content:'•';position:absolute;left:5px;color:#d4af7d}
+.cortesia-badge{display:inline-block;margin-top:10px;background:linear-gradient(135deg,#d4af7d,#c49a6c);color:#fff;padding:4px 16px;border-radius:20px;font-size:.75rem;font-weight:600;letter-spacing:.5px}
+
+/* GALERIA */
+.galeria-tabs{display:flex;justify-content:center;gap:15px;margin-bottom:40px;flex-wrap:wrap}
+.tab-btn{padding:10px 24px;background:none;border:1.5px solid #d4af7d;color:#8b6f4e;border-radius:50px;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:500;transition:all .3s}
+.tab-btn.active,.tab-btn:hover{background:#d4af7d;color:#fff}
+.galeria-content{display:none}
+.galeria-content.active{display:block;animation:fadeIn .5s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.antes-depois{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:35px}
+.antes-depois figure{flex:1;min-width:280px;max-width:400px;text-align:center}
+.antes-depois figure .img-wrap{position:relative;overflow:hidden;border-radius:15px;box-shadow:0 10px 30px rgba(139,111,78,0.15);cursor:zoom-in}
+.antes-depois figure img{width:100%;display:block;object-fit:cover;border-radius:15px;transition:transform .4s ease}
+.antes-depois figure .img-wrap:hover img{transform:scale(1.03)}
+.antes-depois figure .label-tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.9);color:#8b6f4e;padding:4px 14px;border-radius:20px;font-size:.75rem;font-weight:600;letter-spacing:.5px}
+.antes-depois figure figcaption{margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#8b6f4e}
+
+/* LIGHTBOX */
+.lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:1000;display:none;align-items:center;justify-content:center;flex-direction:column;padding:20px;opacity:0;transition:opacity .3s}
+.lightbox.active{display:flex;opacity:1}
+.lightbox-img{max-width:90%;max-height:75%;border-radius:10px;box-shadow:0 20px 60px rgba(0,0,0,0.5);object-fit:contain}
+.lightbox-close{position:absolute;top:30px;right:40px;width:44px;height:44px;background:rgba(255,255,255,0.1);border:none;border-radius:50%;color:#fff;font-size:2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.lightbox-close:hover{background:rgba(255,255,255,0.2)}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:56px;height:56px;background:rgba(255,255,255,0.1);border:none;border-radius:50%;color:#fff;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s}
+.lightbox-nav:hover{background:rgba(255,255,255,0.2)}
+.lightbox-prev{left:30px}
+.lightbox-next{right:30px}
+.lightbox-caption{margin-top:20px;font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#d4af7d;text-align:center;max-width:800px}
+.lightbox-counter{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:#a08570;font-size:.9rem}
+@media(max-width:768px){
+  .lightbox-close{top:15px;right:15px}
+  .lightbox-prev{left:15px}
+  .lightbox-next{right:15px}
+  .lightbox-nav{width:44px;height:44px;font-size:1.2rem}
+}
+
+/* CROMOTERAPIA */
+.cromo-section{background:linear-gradient(135deg,#fdf8f5,#f5ebe0);border-radius:20px;padding:50px;margin:0 auto;max-width:1000px;display:flex;gap:40px;align-items:center;flex-wrap:wrap}
+.cromo-img{flex:0 0 250px;text-align:center}
+.cromo-img img{width:200px;height:200px;border-radius:50%;object-fit:cover;box-shadow:0 10px 30px rgba(139,111,78,0.2)}
+.cromo-text{flex:1;min-width:300px}
+.cromo-text h3{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#5c4a37;margin-bottom:15px}
+.cromo-text p{color:#6b5d4f;margin-bottom:15px}
+.cromo-beneficios{list-style:none}
+.cromo-beneficios li{padding:6px 0 6px 28px;position:relative;color:#6b5d4f;font-size:.9rem}
+.cromo-beneficios li::before{content:'✦';position:absolute;left:0;color:#d4af7d}
+
+/* CITACAO */
+.citacao{text-align:center;padding:100px 40px;background:linear-gradient(135deg,#5c4a37,#3d3225);color:#fff}
+.citacao blockquote{font-family:'Cormorant Garamond',serif;font-size:2rem;font-style:italic;font-weight:300;max-width:700px;margin:0 auto;line-height:1.4}
+.citacao blockquote::before{content:'❝';display:block;font-size:3rem;color:#d4af7d;margin-bottom:10px}
+.citacao .autor{margin-top:25px;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;color:#c4a47c}
+
+/* CONTATO */
+.contato{padding:100px 40px;text-align:center;max-width:800px;margin:0 auto}
+.contato-links{display:flex;justify-content:center;gap:25px;flex-wrap:wrap;margin-top:40px}
+.contato-card{flex:1;min-width:200px;max-width:280px;background:#fff;border-radius:15px;padding:35px 25px;box-shadow:0 5px 20px rgba(139,111,78,0.1);transition:transform .3s;text-decoration:none}
+.contato-card:hover{transform:translateY(-5px)}
+.contato-card .icon{font-size:2.5rem;margin-bottom:15px}
+.contato-card h4{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#5c4a37;margin-bottom:5px}
+.contato-card p{color:#8b7d6b;font-size:.9rem}
+.contato-card .handle{color:#d4af7d;font-weight:600}
+
+/* FOOTER */
+footer{background:#3d3225;color:#a08570;text-align:center;padding:30px 20px;font-size:.8rem}
+footer a{color:#d4af7d;text-decoration:none}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{position:fixed;bottom:25px;right:25px;width:60px;height:60px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;box-shadow:0 5px 20px rgba(37,211,102,0.4);z-index:99;transition:transform .3s}
+.whatsapp-float svg{width:34px;height:34px;fill:#fff}
+.whatsapp-float:hover{transform:scale(1.1)}
+
+/* RESPONSIVO */
+@media(max-width:768px){
+ header{padding:10px 20px}
+ .logo-area span{font-size:1.1rem}
+ nav ul{display:none;position:absolute;top:100%;left:0;width:100%;background:rgba(253,248,245,0.98);flex-direction:column;padding:20px;gap:15px;border-bottom:1px solid rgba(212,175,125,0.2)}
+ nav ul.open{display:flex}
+ .burger{display:flex}
+ .hero-content{flex-direction:column;text-align:center;padding:100px 20px 40px}
+ .hero-text{text-align:center}
+ .hero-text h1{font-size:2.5rem}
+ .hero-text .slogan{padding-left:0;border-left:none;border-top:2px solid #d4af7d;padding-top:15px}
+ .hero-img{flex:0 0 auto}
+ .hero-img img{max-width:250px}
+ .section{padding:60px 20px}
+ .section-title h2{font-size:2rem}
+ .sobre-content{flex-direction:column}
+ .sobre-img{flex:0 0 auto;width:100%;max-width:280px}
+ .cromo-section{padding:30px 20px;flex-direction:column}
+ .cromo-img{flex:0 0 auto}
+ .citacao blockquote{font-size:1.4rem}
+ .contato-card{min-width:150px;padding:25px 15px}
+ .whatsapp-float{width:50px;height:50px}
+ .whatsapp-float svg{width:28px;height:28px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="logo-area">
+    <img src="img/logo.png" alt="Dra. Bianca Damião" loading="lazy">
+    <span>Bianca Damião</span>
+  </div>
+  <nav>
+    <ul id="navMenu">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Procedimentos</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+  <button class="burger" id="burger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <div class="hero-text reveal">
+      <p class="tagline">Harmonização Facial</p>
+      <h1>Dra. Bianca <span class="destaque">Damião</span></h1>
+      <p class="sub">Cirurgiã-Dentista · Especialista em Harmonização Facial</p>
+      <p class="slogan">"Lapidando sua melhor versão"</p>
+      <a href="https://wa.me/5515996636964?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20meu%20agendamento%20de%20consulta" target="_blank" class="btn-agendar">Agendar consulta →</a>
+    </div>
+    <div class="hero-img reveal delay-1">
+      <img src="img/dra_bianca.jpg" alt="Dra. Bianca Damião" loading="eager">
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="section" id="sobre">
+  <div class="section-title reveal">
+    <p class="label">Quem sou eu</p>
+    <h2>Sobre</h2>
+    <div class="line"></div>
+  </div>
+  <div class="sobre-content">
+    <div class="sobre-img reveal delay-1">
+      <img src="img/dra_bianca_old_black.jpg" alt="Dra. Bianca Damião" loading="lazy">
+    </div>
+    <div class="sobre-text reveal delay-2">
+      <p><strong>Cirurgiã-dentista formada pela FMU</strong>, com paixão pela estética e pelo poder de transformar autoestima.</p>
+      <p>Pós-graduada em <strong>Harmonização Facial</strong>, aprofundando conhecimentos em técnicas avançadas e seguras, com foco em resultados naturais e personalizados.</p>
+      <p>Trabalho pautado na valorização da beleza individual, buscando realçar a melhor versão de cada paciente com equilíbrio, naturalidade e precisão técnica.</p>
+      <ul class="checklist">
+        <li>Formação em Cirurgia Dentária — FMU</li>
+        <li>Pós-graduação em Harmonização Facial</li>
+        <li>Formação complementar em harmonização facial</li>
+        <li>Foco em resultados naturais e personalizados</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="section" id="servicos">
+  <div class="section-title reveal">
+    <p class="label">O que eu faço</p>
+    <h2>Procedimentos</h2>
+    <div class="line"></div>
+  </div>
+  <div class="servicos-grid">
+    <div class="servico-card reveal delay-1">
+      <div class="servico-icon">💉</div>
+      <h3>Toxina Botulínica</h3>
+      <p class="desc">Relaxa temporariamente os músculos responsáveis pelas rugas de expressão, suavizando as linhas progressivamente.</p>
+      <ul class="indicacoes">
+        <li>Linhas horizontais da testa</li>
+        <li>Rugas perioculares (pés de galinha)</li>
+        <li>Linhas da glabela (entre as sobrancelhas)</li>
+        <li>Sorriso gengival</li>
+        <li>Bruxismo e hipertrofia do masseter</li>
+        <li>Elevação da cauda da sobrancelha</li>
+      </ul>
+      <p class="duracao"><strong>Duração:</strong> 4 a 6 meses · Resultado em até 15 dias</p>
+    </div>
+
+    <div class="servico-card reveal delay-2">
+      <div class="servico-icon">💋</div>
+      <h3>Preenchimento Labial</h3>
+      <p class="desc">Define contorno, melhora proporção e adiciona volume aos lábios com resultado natural.</p>
+      <ul class="indicacoes">
+        <li>Lábios finos</li>
+        <li>Falta de contorno</li>
+        <li>Assimetrias</li>
+        <li>Hidratação labial</li>
+      </ul>
+      <p class="duracao"><strong>Duração:</strong> 8 a 12 meses · Resultado imediato</p>
+    </div>
+
+    <div class="servico-card reveal delay-3">
+      <div class="servico-icon">✨</div>
+      <h3>Preenchimento de Mento</h3>
+      <p class="desc">Melhora a projeção e o contorno do queixo, trazendo mais equilíbrio ao perfil facial.</p>
+      <ul class="indicacoes">
+        <li>Queixo retraído</li>
+        <li>Falta de definição do contorno</li>
+        <li>Harmonização do perfil</li>
+      </ul>
+      <p class="duracao"><strong>Duração:</strong> 12 a 18 meses · Resultado imediato</p>
+    </div>
+
+    <div class="servico-card reveal delay-4">
+      <div class="servico-icon">🌸</div>
+      <h3>Preenchimento de Malar</h3>
+      <p class="desc">Restaura o volume das maçãs do rosto, proporcionando um efeito de lifting suave e rejuvenescimento.</p>
+      <ul class="indicacoes">
+        <li>Perda de volume nas maçãs do rosto</li>
+        <li>Sulcos nasogenianos (bigode chinês)</li>
+        <li>Falta de definição facial</li>
+        <li>Harmonização do terço médio</li>
+      </ul>
+      <p class="duracao"><strong>Duração:</strong> 12 a 18 meses · Resultado imediato</p>
+    </div>
+
+    <div class="servico-card reveal delay-4">
+      <div class="servico-icon">🔮</div>
+      <h3>Esferas de Cromoterapia</h3>
+      <p class="desc">Massagem com esferas de cristal geladas associadas à cromoterapia em todos os procedimentos.</p>
+      <ul class="indicacoes">
+        <li>Efeito calmante e relaxante</li>
+        <li>Redução de inchaço</li>
+        <li>Estímulo da circulação</li>
+        <li>Sensação de frescor e revitalização</li>
+        <li>Diminuição de vermelhidão pós-procedimento</li>
+      </ul>
+      <span class="cortesia-badge">CORTESIA</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section class="section" id="galeria">
+  <div class="section-title reveal">
+    <p class="label">Resultados</p>
+    <h2>Antes & Depois</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="galeria-tabs reveal delay-1">
+    <button class="tab-btn active" data-tab="botox">Toxina Botulínica</button>
+    <button class="tab-btn" data-tab="labial">Preenchimento Labial</button>
+    <button class="tab-btn" data-tab="malar">Preenchimento de Malar</button>
+    <button class="tab-btn" data-tab="mento">Preenchimento de Mento</button>
+  </div>
+
+  <div class="galeria-content active" id="tab-botox">
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/botox_1_antes.jpg" alt="Antes - Toxina Botulínica 1" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_1_depois.jpg" alt="Depois - Toxina Botulínica 1" loading="lazy"></div></figure>
+    </div>
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/botox_2_antes.jpg" alt="Antes - Toxina Botulínica 2" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_2_depois.jpg" alt="Depois - Toxina Botulínica 2" loading="lazy"></div></figure>
+    </div>
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/botox_3_antes.jpg" alt="Antes - Toxina Botulínica 3" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_3_depois.jpg" alt="Depois - Toxina Botulínica 3" loading="lazy"></div></figure>
+    </div>
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/botox_5_antes.jpg" alt="Antes - Toxina Botulínica 4" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_5_depois.jpg" alt="Depois - Toxina Botulínica 4" loading="lazy"></div></figure>
+    </div>
+  </div>
+
+  <div class="galeria-content" id="tab-labial">
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/labial_2_antes.jpg" alt="Antes - Preenchimento Labial 1" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/labial_2_depois.jpg" alt="Depois - Preenchimento Labial 1" loading="lazy"></div></figure>
+    </div>
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/labial_3_antes.jpg" alt="Antes - Preenchimento Labial 2" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/labial_3_depois.jpg" alt="Depois - Preenchimento Labial 2" loading="lazy"></div></figure>
+    </div>
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/labial_4_antes.jpg" alt="Antes - Preenchimento Labial 3" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/labial_4_depois.jpg" alt="Depois - Preenchimento Labial 3" loading="lazy"></div></figure>
+    </div>
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/botox_4_antes.jpg" alt="Antes - Preenchimento Labial 4" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/botox_4_depois.jpg" alt="Depois - Preenchimento Labial 4" loading="lazy"></div></figure>
+    </div>
+  </div>
+
+  <div class="galeria-content" id="tab-malar">
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/malar_antes_depois1.jpg" alt="Antes e Depois - Preenchimento de Malar 1" loading="lazy"></div></figure>
+    </div>
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/malar_antes_depois3.jpg" alt="Antes e Depois - Preenchimento de Malar 2" loading="lazy"></div></figure>
+    </div>
+  </div>
+
+  <div class="galeria-content" id="tab-mento">
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><span class="label-tag">ANTES</span><img src="img/mento_antes_gallery.jpg" alt="Antes - Preenchimento de Mento" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><span class="label-tag">DEPOIS</span><img src="img/mento_depois_gallery.jpg" alt="Depois - Preenchimento de Mento" loading="lazy"></div></figure>
+    </div>
+  </div>
+</section>
+
+<!-- CROMOTERAPIA -->
+<section class="section">
+  <div class="cromo-section reveal">
+    <div class="cromo-img reveal delay-1">
+      <img src="img/cromoterapia.jpg" alt="Esferas de Cromoterapia" loading="lazy">
+    </div>
+    <div class="cromo-text reveal delay-2">
+      <h3>Esferas de Cromoterapia</h3>
+      <p>Todos os procedimentos incluem uma massagem com esferas de cristal geladas associadas à cromoterapia.</p>
+      <ul class="cromo-beneficios">
+        <li>Efeito calmante e relaxante imediato</li>
+        <li>Redução de inchaço (ação descongestionante)</li>
+        <li>Estímulo da circulação sanguínea</li>
+        <li>Sensação de frescor e revitalização da pele</li>
+        <li>Auxílio na diminuição de vermelhidão pós-procedimento</li>
+        <li>Potencialização da experiência sensorial e do bem-estar</li>
+      </ul>
+      <span class="cortesia-badge">INCLUSO EM TODOS OS PROCEDIMENTOS</span>
+    </div>
+  </div>
+</section>
+
+<!-- CITAÇÃO -->
+<section class="citacao reveal">
+  <blockquote>
+    A boa arte é feita com as mãos,<br>
+    mas a arte extraordinária é feita com o coração.
+  </blockquote>
+  <p class="autor">Lapidando sua melhor versão</p>
+</section>
+
+<!-- CONTATO -->
+<section class="section contato" id="contato">
+  <div class="section-title reveal">
+    <p class="label">Vamos conversar</p>
+    <h2>Contato</h2>
+    <div class="line"></div>
+  </div>
+  <p style="color:#8b7d6b;font-size:1.1rem;margin-top:-30px">Tire suas dúvidas e agende seu horário</p>
+  <a href="https://wa.me/5515996636964?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20meu%20agendamento%20de%20consulta" target="_blank" class="btn-agendar reveal delay-1" style="margin-top:35px">Agendar consulta pelo WhatsApp →</a>
+  <div class="contato-links reveal delay-2">
+    <a href="https://wa.me/5515996636964?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho" target="_blank" class="contato-card">
+      <div class="icon">📱</div>
+      <h4>WhatsApp</h4>
+      <p>(15) 9.9663-6964</p>
+      <p class="handle">Clique para conversar</p>
+    </a>
+    <a href="https://instagram.com/DraBiancaDamiao" target="_blank" class="contato-card">
+      <div class="icon">📷</div>
+      <h4>Instagram</h4>
+      <p class="handle">@DraBiancaDamiao</p>
+      <p>Veja mais resultados</p>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="reveal">
+  <p>Dra. Bianca Damião · Harmonização Facial · Cirurgiã-Dentista</p>
+  <p style="margin-top:5px">Lapidando sua melhor versão</p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5515996636964?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20seu%20trabalho" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização ampliada">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fechar">×</button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Anterior">‹</button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Próxima">›</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+  <p class="lightbox-counter" id="lightboxCounter"></p>
+</div>
+
+<script>
+// Menu mobile
+const burger=document.getElementById('burger');
+const navMenu=document.getElementById('navMenu');
+burger.addEventListener('click',()=>{navMenu.classList.toggle('open')});
+navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navMenu.classList.remove('open')));
+
+// Header scroll
+window.addEventListener('scroll',()=>{
+  const h=document.getElementById('header');
+  if(window.scrollY>50)h.classList.add('scrolled');
+  else h.classList.remove('scrolled');
+});
+
+// Tabs galeria
+const tabBtns=document.querySelectorAll('.tab-btn');
+const tabContents=document.querySelectorAll('.galeria-content');
+tabBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const tab=btn.dataset.tab;
+    tabBtns.forEach(b=>b.classList.remove('active'));
+    tabContents.forEach(c=>c.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-'+tab).classList.add('active');
+  });
+});
+
+// Scroll Reveal (IntersectionObserver)
+const revealEls=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+revealEls.forEach(el=>observer.observe(el));
+
+// LIGHTBOX
+const lightbox=document.getElementById('lightbox');
+const lightboxImg=document.getElementById('lightboxImg');
+const lightboxCaption=document.getElementById('lightboxCaption');
+const lightboxCounter=document.getElementById('lightboxCounter');
+const lightboxClose=document.getElementById('lightboxClose');
+const lightboxPrev=document.getElementById('lightboxPrev');
+const lightboxNext=document.getElementById('lightboxNext');
+
+let currentImages=[];
+let currentIndex=0;
+
+function openLightbox(imgEl){
+  const tabContent=imgEl.closest('.galeria-content');
+  currentImages=Array.from(tabContent.querySelectorAll('.img-wrap img'));
+  currentIndex=currentImages.findIndex(img=>img===imgEl);
+  if(currentIndex===-1) currentIndex=0;
+  showLightboxImage(currentIndex);
+  lightbox.classList.add('active');
+  document.body.style.overflow='hidden';
+}
+
+function showLightboxImage(idx){
+  const img=currentImages[idx];
+  lightboxImg.src=img.src;
+  lightboxImg.alt=img.alt;
+  lightboxCaption.textContent=img.alt;
+  lightboxCounter.textContent=`${idx+1} de ${currentImages.length}`;
+}
+
+function closeLightbox(){
+  lightbox.classList.remove('active');
+  document.body.style.overflow='';
+  lightboxImg.src='';
+}
+
+function prevImage(){
+  currentIndex=(currentIndex-1+currentImages.length)%currentImages.length;
+  showLightboxImage(currentIndex);
+}
+
+function nextImage(){
+  currentIndex=(currentIndex+1)%currentImages.length;
+  showLightboxImage(currentIndex);
+}
+
+// Click nas imagens da galeria
+document.querySelectorAll('.antes-depois figure .img-wrap img').forEach(img=>{
+  img.style.cursor='zoom-in';
+  img.addEventListener('click',()=>openLightbox(img));
+});
+
+lightboxClose.addEventListener('click',closeLightbox);
+lightboxPrev.addEventListener('click',prevImage);
+lightboxNext.addEventListener('click',nextImage);
+
+// Fechar ao clicar no fundo
+lightbox.addEventListener('click',(e)=>{
+  if(e.target===lightbox) closeLightbox();
+});
+
+// Teclado
+document.addEventListener('keydown',(e)=>{
+  if(!lightbox.classList.contains('active')) return;
+  if(e.key==='Escape') closeLightbox();
+  if(e.key==='ArrowLeft') prevImage();
+  if(e.key==='ArrowRight') nextImage();
+});
+
+</script>
+</body>
+</html>
