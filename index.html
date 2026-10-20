@@ -101,7 +101,7 @@ nav a:hover::after{width:100%}
 .antes-depois{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:35px}
 .antes-depois figure{flex:1;min-width:280px;max-width:400px;text-align:center}
 .antes-depois figure .img-wrap{position:relative;overflow:hidden;border-radius:15px;box-shadow:0 10px 30px rgba(139,111,78,0.15);cursor:zoom-in}
-.antes-depois figure img{width:100%;display:block;object-fit:cover;border-radius:15px;transition:transform .4s ease}
+.antes-depois figure img{width:100%;display:block;object-fit:contain;border-radius:15px;transition:transform .4s ease}
 .antes-depois figure .img-wrap:hover img{transform:scale(1.03)}
 .antes-depois figure .label-tag{position:absolute;top:12px;left:12px;background:rgba(255,255,255,0.9);color:#8b6f4e;padding:4px 14px;border-radius:20px;font-size:.75rem;font-weight:600;letter-spacing:.5px}
 .antes-depois figure figcaption{margin-top:12px;font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:#8b6f4e}
@@ -339,6 +339,7 @@ footer a{color:#d4af7d;text-decoration:none}
   <div class="galeria-tabs reveal delay-1">
     <button class="tab-btn active" data-tab="botox">Toxina Botulínica</button>
     <button class="tab-btn" data-tab="labial">Preenchimento Labial</button>
+    <button class="tab-btn" data-tab="rhinomodelagem">Rinomodelação</button>
     <button class="tab-btn" data-tab="malar">Preenchimento de Malar</button>
     <button class="tab-btn" data-tab="mento">Preenchimento de Mento</button>
   </div>
@@ -384,17 +385,11 @@ footer a{color:#d4af7d;text-decoration:none}
       <figure><div class="img-wrap"><img src="img/botoxinvo4.jpg" alt="Depois - Preenchimento Labial 4" loading="lazy"></div></figure>
     </div>
     <div class="antes-depois">
-      <figure><div class="img-wrap"><span class="label-tag">NOVO</span><img src="img/labialnovo1.jpg" alt="Nova Preenchimento Labial 1" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><span class="label-tag">NOVO</span><img src="img/preenchimento_labial_novo1.jpg" alt="Preenchimento Labial - Antes/Depois" loading="lazy"></div></figure>
     </div>
-    <div class="antes-depois">
-      <figure><div class="img-wrap"><span class="label-tag">NOVO</span><img src="img/labialnovo2.jpg" alt="Nova Preenchimento Labial 2" loading="lazy"></div></figure>
-    </div>
-    <div class="antes-depois">
-      <figure><div class="img-wrap"><span class="label-tag">NOVO</span><img src="img/labialnovo3.jpg" alt="Nova Preenchimento Labial 3" loading="lazy"></div></figure>
-    </div>
-    <div class="antes-depois">
-      <figure><div class="img-wrap"><span class="label-tag">NOVO</span><img src="img/labialnovo4.jpg" alt="Nova Preenchimento Labial 4" loading="lazy"></div></figure>
-    </div>
+
+
+
   </div>
 
   <div class="galeria-content" id="tab-malar">
@@ -408,11 +403,28 @@ footer a{color:#d4af7d;text-decoration:none}
 
   <div class="galeria-content" id="tab-mento">
     <div class="antes-depois">
-      <figure><div class="img-wrap"><span class="label-tag">ANTES</span><img src="img/mento_antes_gallery.jpg" alt="Antes - Preenchimento de Mento" loading="lazy"></div></figure>
-      <figure><div class="img-wrap"><span class="label-tag">DEPOIS</span><img src="img/mento_depois_gallery.jpg" alt="Depois - Preenchimento de Mento" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/preenchimento_mento_novo1.jpg" alt="Antes - Preenchimento de Mento" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/preenchimento_mento_novo1.jpg" alt="Depois - Preenchimento de Mento" loading="lazy"></div></figure>
     </div>
   </div>
 </section>
+
+
+
+  <div class="galeria-content" id="tab-rhinomodelagem">
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/rhinomodelagem_novo1.jpg" alt="Antes - Rinomodelação" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/rhinomodelagem_novo1.jpg" alt="Depois - Rinomodelação" loading="lazy"></div></figure>
+    </div>
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/rhinomodelagem_novo2.jpg" alt="Antes - Rinomodelação 2" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/rhinomodelagem_novo2.jpg" alt="Depois - Rinomodelação 2" loading="lazy"></div></figure>
+    </div>
+    <div class="antes-depois">
+      <figure><div class="img-wrap"><img src="img/rhinomodelagem_novo3.jpg" alt="Antes - Rinomodelação 3" loading="lazy"></div></figure>
+      <figure><div class="img-wrap"><img src="img/rhinomodelagem_novo3.jpg" alt="Depois - Rinomodelação 3" loading="lazy"></div></figure>
+    </div>
+  </div>
 
 <!-- CROMOTERAPIA -->
 <section class="section">
