@@ -1,0 +1,51 @@
+# robots.txt - Dra. Bianca Damião | Harmonização Facial
+# Permissões para crawlers de busca e IA
+
+User-agent: *
+Allow: /
+
+# Google - Search + AI Overviews
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /img/
+
+# Bing
+User-agent: bingbot
+Allow: /
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+
+# AI Search Crawlers - PERMITIR (citabilidade)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Anthropic-AI
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+
+# AI Training Crawlers - BLOQUEAR (licenciamento)
+User-agent: GPTBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+
+# Sitemap
+Sitemap: https://drabiancadamiao.netlify.app/sitemap.xml
+
+# Host
+Host: https://drabiancadamiao.netlify.app
